@@ -41,7 +41,15 @@ RUN git clone https://github.com/performancecopilot/pcp.git /pcp && \
     git pull && \
     apt-get install -y $(qa/admin/check-vm -bfp) \
         python-influxdb \
-        python3-influxdb
+        python3-influxdb \
+        python3-pil \
+        python-pil \
+        libmicrohttpd-dev \
+        qtbase5-dev \
+        qtbase5-dev-tools \
+        libqt5svg5-dev \
+        libcairo2-dev \
+        qtchooser
 
 COPY ./entrypoint.sh /entrypoint.sh
 
