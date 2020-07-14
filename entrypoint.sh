@@ -1,5 +1,13 @@
 #!/bin/bash
 
-git checkout ${ver}
+dis=${dis:-''}
+rel=${rel:-''}
+pcp=${pcp:-''}
+
+dest="/packages/$dis/$rel/$pcp"
+
+git checkout "${pcp}"
 ./Makepkgs --verbose
-cp -vf build/deb/*.deb /packages
+
+[[ -d $dest ]] || mkdir -pv "$dest"
+cp -vf build/deb/*.deb "$dest"

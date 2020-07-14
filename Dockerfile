@@ -1,10 +1,13 @@
-ARG ubuntu_release='bionic'
-ARG pcp_version='5.1.1'
+ARG dis='ubuntu'
+ARG rel='bionic'
+ARG pcp='5.1.1'
 
-FROM ubuntu:${ubuntu_release}
+FROM ${dis}:${rel}
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV ver=$pcp_version
+ENV pcp=$pcp
+ENV dis=$dis
+ENV rel=$rel
 
 # Volumes
 VOLUME /packages
