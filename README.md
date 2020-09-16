@@ -2,10 +2,11 @@
 Prepares Performance Co-Pilot deb packages for Ubuntu
 ```
 dis='ubuntu'
-rel='bionic'
-pcp='5.1.1'
-mkdir -pv packages/ubuntu/{xenial,bionic}
-mkdir -pv packages/debian/jessie
+rel='focal'
+pcp='5.2.0'
+
+mkdir -pv packages/ubuntu/{xenial,bionic,focal}
+mkdir -pv packages/debian/{jessie,stretch}
 
 docker build \
     --build-arg dis=$dis \
